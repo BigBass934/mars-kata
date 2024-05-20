@@ -100,5 +100,6 @@ export class RoverComponent {
           console.log(`Invalid command: ${command}`);
       }
     }
+    this.commandString = '';
   }
 }
