@@ -1,0 +1,148 @@
+/* rover.component.css */
+
+.information {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-gap: 10px;
+    border: 1px solid white;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.information.main {
+    margin: 10px;
+    border: 1px solid white;
+    padding: 10px;
+    display: inline;
+}
+
+
+
+.information.instructions {
+    margin: 10px;
+    border: 1px solid white;
+    padding: 10px;
+    display: inline;
+}
+
+.information.status{
+    margin: 20px;
+    border: 1px solid red;
+    padding: 0px;
+    display: inline;
+}
+
+.information.status:first-child {
+    margin-right: 20px;
+}
+
+.display-content {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-gap: 50px;
+    justify-content: center; 
+    width: 100%;
+}
+
+.display-content.notplanet {
+    margin: 20px;
+    padding: 10px;
+    display: inline;
+}
+
+.display-content.planet{
+    margin: 20px;
+    padding: 0px;
+    display: inline;
+}
+
+.display-content.planet:first-child {
+    margin-right: 20px;
+}
+
+/* General Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff; /* Change text color to ensure readability */
+}
+
+/* Inner Content Styles */
+.inner-content {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    /* max-width: 800px; */
+    text-align: center;
+}
+
+/* Grid Container */
+app-grid {
+    display: block;
+    margin: 20px 0;
+}
+
+/* Paragraph Styles */
+p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Alert Header */
+.inner-content p strong {
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+/* Input Field */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Rover Obstacle Message */
+p[style*="font-weight"] {
+    color: #d9534f; /* Bootstrap red color */
+}

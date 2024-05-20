@@ -1,0 +1,72 @@
+.grid-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Arrange the grid rows vertically */
+  align-items: center; /* Center the grid horizontally */
+}
+
+.grid-row {
+  display: flex;
+  justify-content: center; /* Center the grid cells horizontally */
+}
+
+.grid-cell {
+  width: 40px; /* Adjust based on grid size */
+  height: 40px; /* Adjust based on grid size */
+  border: 1px solid #ccc;
+  border-radius: 50%; /* Make the cells circular */
+}
+
+.rover-img {
+  width: 40px; /* Adjust based on desired width */
+  height: 40px; /* Adjust based on desired height */
+  border-radius: 50%; /* Make the rover image circular */
+  transform-origin: center; /* Set the transformation origin to the center of the image */
+}
+
+.rover-img.opposite-side {
+  filter: brightness(75%); /* Darken the image */
+  opacity: 0.7; /* Make the image slightly transparent */
+  border: 4px dashed red; /* Add a dashed red outline */
+}
+
+  /* Apply rotation based on rover direction */
+  .rover-img.N {
+    transform: rotate(0deg); /* No rotation for North direction */
+  }
+  
+  .rover-img.E {
+    transform: rotate(90deg); /* Rotate 90 degrees for East direction */
+  }
+  
+  .rover-img.S {
+    transform: rotate(180deg); /* Rotate 180 degrees for South direction */
+  }
+  
+  .rover-img.W {
+    transform: rotate(270deg); /* Rotate 270 degrees for West direction */
+  }
+
+/* Additional styles for visualizing a spherical grid */
+.grid {
+  position: relative;
+  border-radius: 50%; /*Make the grid circular*/
+  overflow: hidden; /* Hide the overflow outside the circular shape */
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1); /* Add a shadow effect for depth */
+  background-image: url("../../assets/h9534_rgb_cr_H.jpg");
+  background-size: cover;
+
+}
+
+.grid:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%; /* Adjust based on grid size */
+  height: 120%; /* Adjust based on grid size */
+  border-radius: 50%; /* Make the pseudo-element circular */
+  border: 1px solid #ccc; /* Add border for visual distinction */
+}
+

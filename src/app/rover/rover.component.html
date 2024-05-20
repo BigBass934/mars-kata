@@ -1,0 +1,57 @@
+
+<div class="container">
+    <div class="inner-content">
+        <div class="display-content">
+            <div class="display-content notplanet">
+                <div class="information">
+                    <div class="information main">
+                        <p><strong>INFORMATION</strong></p>
+                        <p>This is an implementation of the Mars Rover Kata, with a UI implementation using Angular, Typescript, & OOPs</p>
+                        <p>====================================</p>
+                        <p>NOTES:</p>
+                        <p>- Realistic "planet-wrapping": The rover will move "around" the spherical planet</p>
+                        <p>- Obstacle Detection: The rover will stop & give an alert when attempting to move onto a coordinate with an obstacle.</p>
+                        <p>*For ease of use, the "opposite side" of the planet is clear of obstacles</p>
+                    </div>
+                    <div class="information instructions">
+                        <p><strong>INSTRUCTIONS</strong></p>
+                        <p>Input commands to move the rover, using either the buttons or by entering a string of them manually into the input field below:</p>
+                        <p>"<strong>f</strong>": Move Forward,</p> 
+                        <p>"<strong>b</strong>": Move Backward,</p>
+                        <p>"<strong>l</strong>" Rotate Left,</p>
+                        <p>"<strong>r</strong>": Rotate Right</p>
+                        <p>"<strong>Reset Rover</strong>" resets the rover position, but not the simulation. "<strong>Reset Simulation</strong>" resets the rover and creates a new planet</p>
+                    </div>
+                    <div class="information status">    
+                        <p>Current Position: ({{ rover.x }}, {{ rover.y }}), Direction: {{rover.direction.strRep()}}</p>
+                        <p>On Opposite Side of Planet: {{rover.onOppositeSide}}</p>
+                        <div>
+                            <p><strong>ALERTS</strong></p>
+                            <p [style.font-weight]="rover.obsMsgOld ? 'normal' : 'bold'">{{rover.newObstacleMessage}}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="display-content planet">
+                <app-grid [planet]="planet" [roverPosition]="{x: rover.x, y: rover.y}" [direction]="rover.direction.strRep()" [onOppositeSide]="rover.onOppositeSide"></app-grid>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="inner-content input-container">
+                <input type="text" [(ngModel)]="commandString" placeholder="Enter commands">
+                <button (click)="executeCommands()">Execute Commands</button>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button (click)="moveForward()">Move Forward</button>
+            <button (click)="moveBackward()">Move Backward</button>
+            <button (click)="turnLeft()">Turn Left</button>
+            <button (click)="turnRight()">Turn Right</button>
+            <button (click)="resetRover()">Reset Rover</button>
+            <button (click)="resetSimulation()">Reset Simulation</button>
+        </div>
+    </div>
+</div>
+

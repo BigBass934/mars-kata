@@ -1,0 +1,13 @@
+/* app.component.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../assets/space.jpg'); /* Adjust the path as necessary */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ensure the container covers the full viewport height */
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff; /* Change text color to ensure readability against the background */
+}

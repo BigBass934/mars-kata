@@ -1,0 +1,16 @@
+<!-- grid.component.html -->
+<div class="grid-container">
+  <div class="grid">
+    <div *ngFor="let row of gridRows" class="grid-row">
+      <div *ngFor="let column of gridColumns" 
+           [class.rover]="isRoverPosition(row, column)"
+           [class.obstacle]="hasObstacle(row, column)"
+           [class.null]="isNullCoordinate(row, column)"
+           class="grid-cell">
+           <ng-container *ngIf="isRoverPosition(row, column)">
+            <img [class]="direction" [ngClass]="{'opposite-side': onOppositeSide}" src="assets/mars-rover-2.png" alt="Rover" class="rover-image">
+          </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <label for="userInput">Enter Text:</label>
+    <input type="text" id="userInput" name="userInput" [(ngModel)]="userInput">
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="displayedText">
+  <p>Text entered: {{ displayedText }}</p>
+</div>
